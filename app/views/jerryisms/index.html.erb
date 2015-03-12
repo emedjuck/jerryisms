@@ -1,0 +1,27 @@
+<h1>Listing jerryisms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Created by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jerryisms.each do |jerryism| %>
+      <tr>
+        <td><%= jerryism.text %></td>
+        <td><%= jerryism.created_by %></td>
+        <td><%= link_to 'Show', jerryism %></td>
+        <td><%= link_to 'Edit', edit_jerryism_path(jerryism) %></td>
+        <td><%= link_to 'Destroy', jerryism, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jerryism', new_jerryism_path %>
