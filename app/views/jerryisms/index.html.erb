@@ -1,4 +1,43 @@
-<h1>Listing jerryisms</h1>
+<style>
+.carousel-content {
+    color:black;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height: 300px;
+}
+</style>
+<h1> Jerryisms </h1>
+<div id="carousel-example" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+            <div class="carousel-inner">
+	        <% @jerryisms.each do |jerryism,list_pos|%>
+		    <div class="item">
+                        <div class="carousel-content">
+                            <h2 class="text-center"><%= jerryism.text %> </h2>
+			</div>
+                    </div>
+		<% end %>
+            </div>
+        </div>
+    </div>
+    <!-- Controls --> <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+ <a class="right carousel-control" href="#carousel-example" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+
+</div>
+
+
+<script>
+ $(document).ready(function() {
+    $('#carousel-example .carousel-inner > .item:first').addClass('active');
+ });
+</script>
 
 <table>
   <thead>
