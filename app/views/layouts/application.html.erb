@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body style="background-color:transparent">
+ <% if flash[:notice] %>
+    <div class="notice alert alert-success" role="alert" style="width:30%;margin:20px"><%= flash[:notice] %></div>
+  <% end %>
   <div class="container-fluid">
     <%= yield %>
   </div>
@@ -14,7 +17,7 @@
 </html>
 <style>
   html { 
-  background: url(<%= asset_path 'buddha.jpg' %>) no-repeat center center fixed; 
+  background: url(<%= asset_path 'Jerry-Wise-Budha.png' %>) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

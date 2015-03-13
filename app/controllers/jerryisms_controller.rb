@@ -4,7 +4,7 @@ class JerryismsController < ApplicationController
   # GET /jerryisms
   # GET /jerryisms.json
   def index
-    @jerryisms = Jerryism.all
+    @jerryisms = Jerryism.all.shuffle
   end
 
   # GET /jerryisms/1
@@ -28,7 +28,7 @@ class JerryismsController < ApplicationController
 
     respond_to do |format|
       if @jerryism.save
-        format.html { redirect_to @jerryism, notice: 'Jerryism was successfully created.' }
+        format.html { redirect_to jerryisms_path, notice: 'Jerryism was successfully created.' }
         format.json { render :show, status: :created, location: @jerryism }
       else
         format.html { render :new }
